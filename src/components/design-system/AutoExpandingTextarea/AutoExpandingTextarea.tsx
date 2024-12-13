@@ -1,20 +1,14 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
-export interface AutoExpandingTextareaProps {
-  maxHeight?: number;
-  minHeight?: number;
-  placeholder: string;
-  onChange: (newValue: string) => void;
-  value: string;
-}
+import { AutoExpandingTextareaProps } from './types';
 
-export const AutoExpandingTextarea = ({
+export function AutoExpandingTextarea ({
   maxHeight = 200,
   minHeight = 50,
   placeholder,
   onChange,
   value = '',
-}: AutoExpandingTextareaProps) => {
+}: AutoExpandingTextareaProps) {
   const [height, setHeight] = useState<number>(minHeight);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
