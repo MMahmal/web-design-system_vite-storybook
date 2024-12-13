@@ -22,7 +22,19 @@ import type { DateRange } from 'react-day-picker';
 import { FormControls } from './components/design-system/FormControls/FormControls';
 import { ComplexTable } from './components/design-system/ComplexTable/ComplexTable';
 import { Column } from './components/design-system/Table/types';
-
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import { Label } from './components/ui/label';
+import { Button } from './components/ui/button';
 
 type MockDataTable = {
   id: number;
@@ -364,6 +376,27 @@ function App() {
 
         <TabsContent value="formControls" className="mt-6">
           <FormControls />
+          <br />
+          <div className="space-y-2 flex flex-col gap-8 w-96">
+            <Label>Alert Dialog</Label>
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button variant="outline">Show Dialog</Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    This action cannot be undone.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction>Continue</AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+          </div>
         </TabsContent>
 
         <TabsContent value="complexTable" className="mt-6">

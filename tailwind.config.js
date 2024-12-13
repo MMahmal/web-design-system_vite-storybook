@@ -70,6 +70,16 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      spacing: {
+        '112': '28rem',
+        '128': '32rem',
+        '144': '36rem',
+        '160': '40rem',
+        '176': '44rem',
+        '192': '48rem',
+        '208': '52rem',
+        '224': '56rem',
+      }
     },
   },
   plugins: [require('tailwindcss-animate')],

@@ -1,7 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Grid } from './Grid';
 
-const meta: Meta<typeof Grid> = {
+interface CardData {
+  title: string;
+  description: string;
+  image: string;
+}
+
+const meta: Meta<typeof Grid<CardData>> = {
   title: 'Design System/Grid',
   component: Grid,
   parameters: {
@@ -10,13 +16,7 @@ const meta: Meta<typeof Grid> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Grid>;
-
-interface CardData {
-  title: string;
-  description: string;
-  image: string;
-}
+type Story = StoryObj<typeof Grid<CardData>>;
 
 const mockData: CardData[] = [
   {
